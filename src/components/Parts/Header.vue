@@ -1,10 +1,20 @@
 <template>
-  <v-toolbar class="blue">
-    <v-toolbar-title>Jobeet</v-toolbar-title>
+  <v-toolbar
+    color="indigo"
+    dark
+    fixed
+    app
+  >
+    <v-toolbar-title>Application</v-toolbar-title>
     <v-spacer/>
-    <v-toolbar-items>
-      <v-btn flat>Search</v-btn>
-      <v-btn flat>Post</v-btn>
-    </v-toolbar-items>
+    <Search/>
   </v-toolbar>
 </template>
+<script>
+import Search from '@/components/Search/Jobs'
+export default {
+  components: {
+    Search
+  }
+}
+</script>
