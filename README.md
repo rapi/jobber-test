@@ -27,4 +27,9 @@ npm run e2e
 npm test
 ```
 
-For a detailed explanation on how things work, check out the [guide](http://vuejs-templates.github.io/webpack/) and [docs for vue-loader](http://vuejs.github.io/vue-loader).
+# Additional
+* Ui framework - [Vuetify](https://vuetifyjs.com/en/getting-started/quick-start)
+* XMLHttpRequests requests - [Axios](https://github.com/axios/axios)
+* State Management - [Vuex](https://vuex.vuejs.org/)
+* Unit Testing - [Jest](https://jestjs.io/docs/en/getting-started.html)
+* e2e Testing - [Nightwatch](http://nightwatchjs.org/gettingstarted)
