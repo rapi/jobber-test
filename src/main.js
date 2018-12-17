@@ -9,7 +9,8 @@ import App from './App'
 // styles
 import 'vuetify/dist/vuetify.min.css'
 // Icons
-import '@fortawesome/fontawesome-free/css/all.css' // Ensure you are using css-loader
+import '@fortawesome/fontawesome-free/css/all.css'
+import store from '@/store' // Ensure you are using css-loader
 // Custom config
 Vue.config.productionTip = false // Ensure you are using css-loader
 
@@ -21,6 +22,7 @@ Vue.use(Vuetify, {
 // clear console every time
 window.addEventListener('message', e => {
   if (process.env.NODE_ENV !== 'production') {
+    Vue.config.devtools = true
     console.clear()
   }
 })
@@ -28,6 +30,7 @@ window.addEventListener('message', e => {
 export default new Vue({
   el: '#app',
   router,
+  store,
   components: {
     App
   },
