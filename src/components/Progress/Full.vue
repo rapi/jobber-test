@@ -1,0 +1,9 @@
+<template>
+  <v-progress-linear
+    slot="extension"
+    :indeterminate="true"
+    class="ma-0"
+  />
+</template>
+<script>
+</script>

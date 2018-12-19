@@ -1,4 +1,9 @@
 export {
   default as jobs
 }
-  from './jobs'
+from './jobs'
+
+export {
+  default as jobsCategories
+}
+from './jobsCategories'

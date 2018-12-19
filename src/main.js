@@ -2,6 +2,7 @@
 import Vue from 'vue'
 // UX plugin
 import Vuetify from 'vuetify'
+import infiniteScroll from 'vue-infinite-scroll'
 // router files
 import router from './router'
 import App from './App'
@@ -18,19 +19,16 @@ Vue.config.productionTip = false // Ensure you are using css-loader
 Vue.use(Vuetify, {
   iconfont: 'mdi'
 })
+Vue.use(infiniteScroll)
 
 // clear console every time
-window.addEventListener('message', e => {
-  if (process.env.NODE_ENV !== 'production') {
-    Vue.config.devtools = true
-    console.clear()
-  }
-})
-
 export default new Vue({
   el: '#app',
   router,
   store,
+  directives: {
+    infiniteScroll
+  },
   components: {
     App
   },

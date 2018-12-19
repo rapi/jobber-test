@@ -11,15 +11,15 @@
 </template>
 
 <script>
-import Header from '@/components/Parts/Header'
-import Footer from '@/components/Parts/Footer'
-import Content from '@/components/Parts/Content'
+import Header from "@/components/Parts/Header";
+import Footer from "@/components/Parts/Footer";
+import Content from "@/components/Parts/Content";
 export default {
-  name: 'App',
+  name: "App",
   components: {
     Content,
     Header,
     Footer
   }
-}
+};
 </script>
