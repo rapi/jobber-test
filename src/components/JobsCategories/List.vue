@@ -15,7 +15,9 @@
               v-for="row in list.slice(0,listSize)"
               :key="row._id"
             >
-              <CategoryJobLink>{{ row.title }} {{ row._id }}</CategoryJobLink>
+              <router-link :to="'/category/'+row._id">
+                <CategoryJobLink>{{ row.title }}</CategoryJobLink>
+              </router-link>
               <JobsTable :category="row._id"/>
             </div>
           </v-flex>

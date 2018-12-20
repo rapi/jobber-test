@@ -5,7 +5,12 @@
     fixed
     app
   >
-    <v-toolbar-title>Application</v-toolbar-title>
+    <v-toolbar-title>
+      <router-link
+        to="/"
+        tag="button"
+      >Application</router-link>
+    </v-toolbar-title>
     <v-spacer/>
 
     <Search/>
@@ -19,3 +24,4 @@ export default {
   }
 };
 </script>
+

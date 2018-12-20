@@ -2,3 +2,12 @@
   export const JOBS_CATEGORY_FETCHED = 'JOBS_CATEGORY_FETCHED';
   export const JOBS_CATEGORY_ERROR = 'JOBS_CATEGORY_ERROR';
   export const JOBS_CATEGORY_LOADING = 'JOBS_CATEGORY_LOADING';
+  export const JOB_CATEGORY_LOADING = 'JOB_CATEGORY_LOADING';
+
+
+
+  //Jobs
+
+  export const JOBS_FETCHED = 'JOBS_FETCH';
+  export const JOBS_LOADING = 'JOBS_LOADING';
+  export const JOBS_ERROR = 'JOBS_ERROR';

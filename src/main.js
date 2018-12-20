@@ -11,7 +11,7 @@ import App from './App'
 import 'vuetify/dist/vuetify.min.css'
 // Icons
 import '@fortawesome/fontawesome-free/css/all.css'
-import store from '@/store' // Ensure you are using css-loader
+import '@mdi/font/css/materialdesignicons.css' // Ensure you are using css-loader
 // Custom config
 Vue.config.productionTip = false // Ensure you are using css-loader
 
@@ -20,8 +20,10 @@ Vue.use(Vuetify, {
   iconfont: 'mdi'
 })
 Vue.use(infiniteScroll)
+//Store
+import store from '@/store' // Ensure you are using css-loader
 
-// clear console every time
+
 export default new Vue({
   el: '#app',
   router,
