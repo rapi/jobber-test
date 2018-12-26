@@ -4,9 +4,12 @@
 
 ## Build Setup
 
-``` bash
+```bash
 # install dependencies
 npm install
+
+# copy configuration
+cp config.example config -r
 
 # serve with hot reload at localhost:8080
 npm run dev
@@ -27,9 +30,16 @@ npm run e2e
 npm test
 ```
 
+# Load all jobs from diferent providers
+
+- [Rabota.md MD Jobs](https://rabota.md) (implemented)
+- [Linkedin Global Jobs](https://www.linkedin.com/) (not implemented yet)
+- [HH.ru RU Jobs](https://www.linkedin.com/) (not implemented yet)
+
 # Additional
-* Ui framework - [Vuetify](https://vuetifyjs.com/en/getting-started/quick-start)
-* XMLHttpRequests requests - [Axios](https://github.com/axios/axios)
-* State Management - [Vuex](https://vuex.vuejs.org/)
-* Unit Testing - [Jest](https://jestjs.io/docs/en/getting-started.html)
-* e2e Testing - [Nightwatch](http://nightwatchjs.org/gettingstarted)
+
+- Ui framework - [Vuetify](https://vuetifyjs.com/en/getting-started/quick-start)
+- XMLHttpRequests requests - [Axios](https://github.com/axios/axios)
+- State Management - [Vuex](https://vuex.vuejs.org/)
+- Unit Testing - [Jest](https://jestjs.io/docs/en/getting-started.html)
+- e2e Testing - [Nightwatch](http://nightwatchjs.org/gettingstarted)

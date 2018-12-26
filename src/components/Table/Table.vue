@@ -8,11 +8,7 @@
       slot="items"
       slot-scope="props"
     >
-      <td
-        v-for="(row,name) in rows"
-        :key="name"
-        class="text-xs"
-      >{{ row(props.item) }}</td>
+      <slot :row="props.item"/>
     </template>
   </v-data-table>
 </template>

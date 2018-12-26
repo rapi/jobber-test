@@ -8,11 +8,20 @@
         (row)=>row.location,
         (row)=>row.price,
       ]"
-      :items="list.filter((el)=>el.category===category)"
+      :items="jobsByCategory(category)"
       :options="Object.assign({
         'loading':categoryById(category).loading
       },options)"
-    />
+    >
+      <tr slot-scope="row">
+        <td>
+          <router-link :to="'/job/'+row.row._id">{{ row.row.title }}</router-link>
+        </td>
+        <td>{{ row.row.company }}</td>
+        <td>{{ row.row.location }}</td>
+        <td>{{ row.row.price }}</td>
+      </tr>
+    </Table>
   </div>
 </template>
 <script>
@@ -24,10 +33,10 @@ import { JOBS_FETCH } from "@/constants/Types.actions";
 import {
   JOBS_BY_CATEGORIES_LIST,
   JOBS_BY_CATEGORIES_LOADING,
-  JOBS_BY_CATEGORIES_ERROR,
+  JOBS_LIST,
+  JOBS_BY_CATEGORY,
   JOBS_CATEGORIES_BY_ID
 } from "@/constants/Types.getters";
-import { setInterval } from "timers";
 
 import Table from "@/components/Table/Table";
 export default {
@@ -69,8 +78,9 @@ export default {
   }),
   computed: {
     ...mapGetters({
-      list: JOBS_BY_CATEGORIES_LIST,
-      categoryById: JOBS_CATEGORIES_BY_ID
+      list: JOBS_LIST,
+      categoryById: JOBS_CATEGORIES_BY_ID,
+      jobsByCategory: JOBS_BY_CATEGORY
       //   loading: state => state.loading[this.category]
     })
   },

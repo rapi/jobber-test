@@ -3,17 +3,19 @@ import {
 } from "@/constants/Types.actions";
 
 import {
-  JOBS_BY_CATEGORIES_LIST,
-  JOBS_BY_CATEGORIES_LOADING,
-  JOBS_BY_CATEGORIES_ERROR,
+  JOBS_LIST,
+  JOBS_LOADING,
+  JOBS_ERROR,
+  JOB_BY_ID,
+  JOBS_BY_CATEGORY,
 }
 from "@/constants/Types.getters";
 
 import {
-  JOB_CATEGORY_LOADING,
-  JOBS_FETCHED,
-  JOBS_LOADING,
-  JOBS_ERROR,
+  JOB_CATEGORY_LOADING as LOADING_CATEGORY,
+  JOBS_FETCHED as FECHED,
+  JOBS_LOADING as LOADING,
+  JOBS_ERROR as ERROR,
 }
 from "@/constants/Types.mutations";
 
@@ -24,35 +26,47 @@ import {
 export default {
   state: {
     list: [],
-    loading: {},
+    loading: true,
     error: {},
   },
   mutations: {
-    [JOBS_FETCHED]: (state, data) => state.list = state.list.concat(data),
-    [JOBS_LOADING]: (state, data) => state.loading[data.category = data.loading],
-    [JOBS_ERROR]: (state, data) => state.error = data.error,
+    [FECHED]: (state, data) => state.list = state.list.concat(data),
+    [LOADING]: (state, data) => state.loading = data.loading,
+    [ERROR]: (state, data) => state.error = data.error,
   },
   actions: {
     [JOBS_FETCH]: (context, params) => {
-      context.commit(JOB_CATEGORY_LOADING, {
+      context.commit(LOADING, {
         loading: true,
-        id: params.category
       })
+      if (params.category)
+        context.commit(LOADING_CATEGORY, {
+          loading: true,
+          id: params.category
+        })
       fetch(params)
         .then(result => {
-          context.commit(JOBS_FETCHED, result.data)
+          context.commit(FECHED, result.data)
         })
         .catch(e => context.commit(JOBS_ERROR, error))
-        .then(() => context.commit(JOB_CATEGORY_LOADING, {
-          loading: false,
-          id: params.category
-        }))
+        .then(() => {
+          context.commit(LOADING, {
+            loading: false,
+          })
+          if (params.category)
+            context.commit(LOADING_CATEGORY, {
+              loading: false,
+              id: params.category
+            })
+        })
     }
   },
   getters: {
-    [JOBS_BY_CATEGORIES_LIST]: state => state.list,
-    [JOBS_BY_CATEGORIES_LOADING]: state => state.loading,
-    [JOBS_BY_CATEGORIES_ERROR]: state => state.error,
+    [JOBS_LIST]: state => state.list,
+    [JOBS_LOADING]: state => state.loading,
+    [JOBS_ERROR]: state => state.error,
+    [JOB_BY_ID]: state => id => state.list.find(e => e._id === id),
+    [JOBS_BY_CATEGORY]: state => category => state.list.filter(el => el.category === category),
   }
 
 }

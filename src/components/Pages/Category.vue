@@ -10,7 +10,9 @@
         <v-flex>
           <JobsTable
             :category="$route.params.id"
-            :options="{'hide-actions':true}"
+            :options="{
+              'hide-actions':true,
+              'no-data':''}"
           />
         </v-flex>
       </v-layout>

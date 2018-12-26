@@ -40,7 +40,8 @@ import { JOBS_CATEGORY_FETCH } from "@/constants/Types.actions";
 import {
   JOBS_CATEGORIES_LIST,
   JOBS_CATEGORIES_LOADING,
-  JOBS_CATEGORIES_ERROR
+  JOBS_CATEGORIES_ERROR,
+  JOBS_LIST
 } from "@/constants/Types.getters";
 
 export default {
